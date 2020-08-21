@@ -1,0 +1,8 @@
+regex replace
+from: interface \w+\s*{\n\s+new\(\):\s\w+;\n.+\n}\ninterface\s([a-zA-Z0-9]+)_.+
+to: interface $1 {
+
+regex replace
+from: parm(\d)\??
+to: param$1?
+
