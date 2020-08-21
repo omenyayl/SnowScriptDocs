@@ -1,7 +1,7 @@
 # SnowScriptDocs
 Use VSCode Intellisense without integrating with SNow
 
-## Server-side scripts
+## Server and Client scripts
 Either edit the server.ts file or create a new .ts file - making sure to import the appropriate type definitions just like in server.ts and client.ts:
 
 Inside server.ts:
