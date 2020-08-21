@@ -2,7 +2,10 @@
 Use VSCode Intellisense without integrating with SNow
 
 ## Server and Client scripts
-Either edit the server.ts file or create a new .ts file - making sure to import the appropriate type definitions just like in server.ts and client.ts:
+You have the following options for scripting:
+* Edit the server.ts file for server-side scripting
+* Edit the client.ts file for client-side scripting
+* Create a new .ts file, making sure to import the appropriate type definitions just like in server.ts and client.ts:
 
 Inside server.ts:
 ```
