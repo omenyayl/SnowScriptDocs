@@ -408,7 +408,7 @@ interface GlideRecord {
     /** Defines a GlideRecord based on the specified expression of name = value */
     get(name: any, value: any): boolean;
     /** Updates the current GlideRecord with any changes that have been made */
-    update(reason: any): string;
+    update(reason?: any): string;
     /** Updates each GlideRecord in the list with any changes that have been made */
     updateMultiple(): void;
     /** Deletes the current record */
@@ -423,7 +423,7 @@ interface GlideRecord {
     setWorkflow(e: boolean): void;
     /** Adds a filter to return records by specifying a field and value. You can use an optional 'operator' as a second parameter */
     addQuery(name: string, operator: string, value: any): GlideQueryCondition;
-    /** Adds a filter to return records by specifying a field and value. You can use an optional 'operator' as a second parameter */
+    /** Adds a filter to return records by specifying a field and value.*/
     addQuery(name: string, value: any): GlideQueryCondition;
     /** Adds a filter to return active records */
     addActiveQuery(): GlideQueryCondition;
@@ -515,15 +515,19 @@ interface GlideQueryCondition {
     new(): GlideQueryCondition;
     /** Adds an OR condition to the current condition. oper is an optional parameter */
     addOrCondition(name: string, oper: string, value: any): GlideQueryCondition;
+    /** Adds an OR condition to the current condition. */
+    addOrCondition(name: string, value: any): GlideQueryCondition;
     /** Adds an AND condition to the current condition. oper is an optional parameter */
     addCondition(name: string, oper: string, value: any): GlideQueryCondition;
+    /** Adds an AND condition to the current condition. */
+    addCondition(name: string, value: any): GlideQueryCondition;
 }
 /** The API allows you to evaluate scripts from a GlideRecord field */
 declare const GlideScopedEvaluator: GlideScopedEvaluator;
 interface GlideScopedEvaluator {
     new(): GlideScopedEvaluator;
     /** Evaluates a script from a GlideRecord field. variables parameter is optional */
-    evaluateScript(gr: GlideRecord, scriptField: string, variables: any): any;
+    evaluateScript(gr: GlideRecord, scriptField: string, variables?: any): any;
     /** Puts a variable into the GlideScopedEvaluator object */
     putVariable(name: string, value: any): void;
     /** Gets a variable from a GlideScopedEvaluator object */
@@ -741,7 +745,7 @@ interface gs {
     /** Queries an object and returns true if the object is null, undefined, or contains an empty string */
     nil(o: Object): boolean;
     /** Retrieves a message from UI messages. args is an optional paramter */
-    getMessage(id: string, args: any): string;
+    getMessage(id: string, args?: any): string;
     /** Determines if the current user has the specified role */
     hasRole(role: string): boolean;
     /** Provides a safe way to call from the sandbox, allowing only trusted scripts to be included */
@@ -986,7 +990,7 @@ interface RESTMessageV2 {
     /** Uses the specified attachment as the request body of this REST Message. Mutually exclusive with setRequestBody */
     setRequestBodyFromAttachment(attachmentSysId: string): void;
     /** Setup the response body to be saved into the specified attachment when the request is sent. encryptCtxSysId is optional */
-    saveResponseBodyAsAttachment(tableName: string, recordSysId: string, filename: string, encryptCtxSysId: string): void;
+    saveResponseBodyAsAttachment(tableName: string, recordSysId: string, filename: string, encryptCtxSysId?: string): void;
     /** Set an HTTP header to the specified value */
     setRequestHeader(name: string, value: string): void;
     /** Set a REST message function variable to the specified value */

@@ -70,7 +70,7 @@ interface g_form {
     /** Returns the value of the specified field */
     getValue(fieldName: string): string;
     /** Hides all field messages. <type> paramter is optional */
-    hideAllFieldMsgs(type: string): void;
+    hideAllFieldMsgs(type?: string): void;
     /** Hides the error message placed by showErrorBox() */
     hideErrorBox(input: string): void;
     /** Hides the message placed by showFieldMsg() */
@@ -161,7 +161,7 @@ interface g_list {
     /** Sets the first row that will be displayed in the list when the list is refreshed */
     setFirstRow(rowNum: number): void;
     /** Sets the groupBy criteria for the list, for a single field or multiple fields. For a single field, use field or groupByField. The groupBy prefix is optional. For multiple fields use field1^field2^field3 or groupByField1^groupByField2^groupByField3 */
-    setGroupBy(groupBy: string): void;
+    setGroupBy(groupBy?: string): void;
     /** Sets the orderBy criteria for the list. For a single order by field use orderBy field or orderByDescField. For multiple fields, use orderByField1^orderByField2^orderByField3. orderBy specifies ascending order and orderByDesc specifies descending. These prefix strings are optional. If not specified orderBy is assumed */
     setOrderBy(orderBy: string): void;
     /** Sets the number of rows per page to display */
@@ -259,7 +259,7 @@ interface GlideRecord {
     /** Sets the limit for how many records will be returned by the GlideRecord query */
     setLimit(maxQuery: number): void;
     /** Update the record with an optional responseFunction handler */
-    update(responseFunction: string): void;
+    update(responseFunction?: string): void;
 }
 declare const getMessage: getMessage;
 interface getMessage {
